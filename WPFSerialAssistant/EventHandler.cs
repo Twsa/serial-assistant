@@ -195,6 +195,28 @@ namespace WPFSerialAssistant
                 SendData();
             }
         }
+        private bool TestSendData()
+        {
+            string textToSend = "*Hello World~";
+            if (string.IsNullOrEmpty(textToSend))
+            {
+                Alert("要发送的内容不能为空！");
+                return false;
+            }
+
+            if (autoSendEnableCheckBox.IsChecked == true)
+            {
+                return SerialPortWrite(textToSend, false);
+            }
+            else
+            {
+                return SerialPortWrite(textToSend);
+            }
+        }
+        private void helloButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestSendData();
+        }
 
         private void saveRecvDataButton_Click(object sender, RoutedEventArgs e)
         {

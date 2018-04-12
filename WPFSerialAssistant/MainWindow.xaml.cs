@@ -25,5 +25,10 @@ namespace WPFSerialAssistant
             InitializeComponent();
             InitCore();
         }
+
+        private void sendDataTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
